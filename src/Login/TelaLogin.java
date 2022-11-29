@@ -170,9 +170,9 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = new String(senhaPassword.getPassword());
         
         try {
-            Credenciais usuario = new Credenciais(login, senha);
-            Credenciais cad = new Credenciais();
-            if(cad.existe(usuario)){
+            Usuario usuario = new Usuario(login, senha);
+            
+            if(usuario.existe(usuario)){
                 
                 this.dispose();
                 new MenuPrincipal().setVisible(true);
@@ -203,10 +203,10 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(senhaPassword.getPassword());
         
             try {
-                CadUsuario usuario = new CadUsuario(login, senha);
-                CadUsuario cad = new CadUsuario();
+                Usuario usuario = new Usuario(login, senha);
                 
-                if(cad.existe(usuario)){
+                
+                if(usuario.existe(usuario)){
 
                     this.dispose();
                     new MenuPrincipal().setVisible(true);

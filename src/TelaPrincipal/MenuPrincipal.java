@@ -4,17 +4,17 @@
  */
 package TelaPrincipal;
 
-import Funcionario.AdicionarFunci;
-import Funcionario.AlterarExcluirFunci;
-import Funcionario.ConsultarFunci;
+import FunciProjeto.AdicionarFunci;
+import FunciProjeto.AlterarExcluirFunci;
+import FunciProjeto.ConsultarFunci;
 
 import Login.AdicionarCredenciais;
 import Login.AlterarExcluirCredenciais;
 import Login.ConsultarCredenciais;
 
-import Projeto.AdicionarProjeto;
-import Projeto.AlterarExcluirProjeto;
-import Projeto.ConsultarProjeto;
+import FunciProjeto.AdicionarProjeto;
+import FunciProjeto.AlterarExcluirProjeto;
+import FunciProjeto.ConsultarProjeto;
 
 
 /**

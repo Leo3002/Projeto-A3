@@ -4,8 +4,8 @@
  */
 package Login;
 
-import Funcionario.AdicionarFunci;
-import Funcionario.FunciProjeto;
+import FunciProjeto.AdicionarFunci;
+import FunciProjeto.FunciProjeto;
 import TelaPrincipal.MenuPrincipal;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -44,8 +44,8 @@ public class AdicionarCredenciais extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtSenha = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,9 +76,6 @@ public class AdicionarCredenciais extends javax.swing.JFrame {
         jLabel1.setText("Cadastre suas Credênciais");
 
         jLabel2.setText("Usuario:");
-
-        txtSenha.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        txtSenha.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setText("Senha:");
 
@@ -140,6 +137,7 @@ public class AdicionarCredenciais extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVoltarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarMenuActionPerformed
@@ -150,15 +148,15 @@ public class AdicionarCredenciais extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String usuario = txtUsuario.getText();
-        String senha = txtSenha.getText();
+        String senha = new String(txtSenha.getPassword());
         
 
-        CadUsuario u = Usuario(); 
-        u.setSenha(usuario);
-        u.setUsuario(senha);
+        Usuario u = new Usuario(usuario, senha); 
+        u.setSenha(senha);
+        u.setUsuario(usuario);
         
         try {
-            f.InserirFunci();
+            u.InserirCreden();
             acaobotaolimpa();
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!!");
 
@@ -209,7 +207,9 @@ public class AdicionarCredenciais extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtSenha;
+    private javax.swing.JPasswordField txtSenha;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    
 }
